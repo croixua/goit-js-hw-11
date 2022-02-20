@@ -44,8 +44,8 @@ function onLoadMore(e) {
 
   fetchImages(searchQueryValue, page)
     .then(data => {
-      quantityCheck(data.totalHits);
       makeLoadMoreMarkupCard(data.hits);
+      quantityCheck(data.totalHits);
     })
     .catch(error);
 }
