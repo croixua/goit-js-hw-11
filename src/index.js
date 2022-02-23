@@ -32,6 +32,7 @@ function onSubmit(e) {
       );
 
     makeMarkupCard(data.hits);
+    notiflix.Notify.success(`"Hooray! We found ${data.totalHits} images."`);
 
     loadMoreBtnRef.removeAttribute('hidden');
   });
@@ -44,8 +45,8 @@ function onLoadMore(e) {
 
   fetchImages(searchQueryValue, page)
     .then(data => {
-      quantityCheck(data.totalHits);
       makeLoadMoreMarkupCard(data.hits);
+      quantityCheck(data.totalHits);
     })
     .catch(error);
 }
